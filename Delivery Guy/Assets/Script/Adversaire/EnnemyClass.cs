@@ -20,11 +20,5 @@ public class EnnemyClass : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            compteur.nbCarton = 0;
-        }
-    }
+    
 }
