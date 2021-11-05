@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: da21ff240526e1a4daac2fe6b8b81ca2
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: block_rounded_60
+    100002: block_rounded_61
+    100004: cylinder_full_66
+    100006: cylinder_full_67
+    100008: detail_engine_57
+    100010: detail_exhaust_62
+    100012: detail_exhaust_63
+    100014: detail_fender_55
+    100016: detail_fender_56
+    100018: detail_fenderRounded_65
+    100020: detail_fenderSquare_64
+    100022: hilt_handle_guard_68
+    100024: hilt_handle_guard_69
+    100026: //RootNode
+    100028: wheel_dirt_53
+    100030: wheel_dirt_54
+    400000: block_rounded_60
+    400002: block_rounded_61
+    400004: cylinder_full_66
+    400006: cylinder_full_67
+    400008: detail_engine_57
+    400010: detail_exhaust_62
+    400012: detail_exhaust_63
+    400014: detail_fender_55
+    400016: detail_fender_56
+    400018: detail_fenderRounded_65
+    400020: detail_fenderSquare_64
+    400022: hilt_handle_guard_68
+    400024: hilt_handle_guard_69
+    400026: //RootNode
+    400028: wheel_dirt_53
+    400030: wheel_dirt_54
+    2100000: tire
+    2100002: _defaultMat
+    2100004: hilt
+    2100006: lightRed
+    2100008: black
+    2100010: customMaterial8
+    2100012: glass
+    2300000: block_rounded_60
+    2300002: block_rounded_61
+    2300004: cylinder_full_66
+    2300006: cylinder_full_67
+    2300008: detail_engine_57
+    2300010: detail_exhaust_62
+    2300012: detail_exhaust_63
+    2300014: detail_fender_55
+    2300016: detail_fender_56
+    2300018: detail_fenderRounded_65
+    2300020: detail_fenderSquare_64
+    2300022: hilt_handle_guard_68
+    2300024: hilt_handle_guard_69
+    2300026: wheel_dirt_53
+    2300028: wheel_dirt_54
+    3300000: block_rounded_60
+    3300002: block_rounded_61
+    3300004: cylinder_full_66
+    3300006: cylinder_full_67
+    3300008: detail_engine_57
+    3300010: detail_exhaust_62
+    3300012: detail_exhaust_63
+    3300014: detail_fender_55
+    3300016: detail_fender_56
+    3300018: detail_fenderRounded_65
+    3300020: detail_fenderSquare_64
+    3300022: hilt_handle_guard_68
+    3300024: hilt_handle_guard_69
+    3300026: wheel_dirt_53
+    3300028: wheel_dirt_54
+    4300000: wheel_dirt_53
+    4300002: wheel_dirt_54
+    4300004: detail_fender_55
+    4300006: detail_fender_56
+    4300008: detail_engine_57
+    4300010: block_rounded_60
+    4300012: block_rounded_61
+    4300014: detail_exhaust_62
+    4300016: detail_exhaust_63
+    4300018: detail_fenderSquare_64
+    4300020: detail_fenderRounded_65
+    4300022: cylinder_full_66
+    4300024: cylinder_full_67
+    4300026: hilt_handle_guard_68
+    4300028: hilt_handle_guard_69
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.05
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
