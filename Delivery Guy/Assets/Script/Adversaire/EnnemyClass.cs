@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompteurCardboard : MonoBehaviour
+public class EnnemyClass : MonoBehaviour
 {
-    public int nbCarton = 0;
+    CompteurCardboard compteur;
+    void Awake()
+    {
+        compteur = GameObject.FindWithTag("Player").GetComponent<CompteurCardboard>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -16,12 +20,11 @@ public class CompteurCardboard : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Ennemy")
+        if (other.gameObject.tag == "Player")
         {
-            nbCarton = 0;
+            compteur.nbCarton = 0;
         }
     }
 }
