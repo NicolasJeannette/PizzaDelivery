@@ -6,8 +6,8 @@ namespace e23.VehicleController
     public class VehicleBehaviourSettings : ScriptableObject
     {
         [Header("Parameters")]
-        [Range(1.0f, 12.0f)] public float acceleration = 5f;
-        [Range(5.0f, 100.0f)] public float maxSpeed = 30f;
+        [Range(1.0f, 100.0f)] public float acceleration = 5f;
+        [Range(5.0f, 1000.0f)] public float maxSpeed = 30f;
         [Range(1.0f, 15.0f)] public float breakSpeed = 5f;
         [Range(5.0f, 200.0f)] public float boostSpeed = 60f;
         [Range(1.0f, 500.0f)] public float maxSpeedToStartReverse = 150f;
@@ -17,6 +17,7 @@ namespace e23.VehicleController
         [Range(0.0f, 1.0f)] public float drift = 1f;
         [Range(0.0f, 3.0f)] public float vehicleBodyTilt = 0f;
         [Range(1.0f, 10.0f)] public float forwardTilt = 8f;
+        [Range(1.0f, 50.0f)] public float straf = 8f;
 
         [Header("Switches")]
         public bool turnInAir = true;

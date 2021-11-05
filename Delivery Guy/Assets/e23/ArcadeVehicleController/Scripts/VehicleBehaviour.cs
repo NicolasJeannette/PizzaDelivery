@@ -60,6 +60,8 @@ namespace e23.VehicleController
 
         public VehicleBehaviourSettings VehicleSettings { get { return vehicleSettings; } set { vehicleSettings = value; } }
 
+        private float strafDirection;
+        public float Straf => VehicleSettings.straf;
         public float Acceleration => VehicleSettings.acceleration;
         public float MaxSpeed { get; set; }
         public float BreakSpeed => VehicleSettings.breakSpeed;                                                  
@@ -146,6 +148,8 @@ namespace e23.VehicleController
 
         private void Update()
         {
+            SetVehicleSettings();
+
             Accelerate();
             Strafe();
 
@@ -177,6 +181,8 @@ namespace e23.VehicleController
             }
             else
             {
+                PhysicsSphere.AddForce(transform.right * Straf * strafDirection, ForceMode.Acceleration);
+
                 PhysicsSphere.AddForce(transform.forward * (speedTarget / 10), ForceMode.Acceleration);
                 PhysicsSphere.AddForce(Vector3.down * Gravity, ForceMode.Acceleration);
             }
@@ -347,6 +353,7 @@ namespace e23.VehicleController
         {
             strafeSpeed = MaxStrafingSpeed * (direction * 2);
             strafeTilt = Steering * direction;
+            strafDirection = direction;
         }
         
         /// <summary>
@@ -393,12 +400,12 @@ namespace e23.VehicleController
         /// <param name="rotation"></param>
         public void SetPosition(Vector3 position, Quaternion rotation)
         {
-            speed = rotate = 0.0f;
+            //speed = rotate = 0.0f;
 
-            PhysicsSphere.velocity = Vector3.zero;
-            PhysicsSphere.position = position;
+            //PhysicsSphere.velocity = Vector3.zero;
+            //PhysicsSphere.position = position;
 
-            transform.SetPositionAndRotation(position, rotation);
+            //transform.SetPositionAndRotation(position, rotation);
         }
     }
 }

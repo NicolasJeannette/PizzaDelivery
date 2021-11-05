@@ -2232,8 +2232,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
-  m_LocalRotation: {x: -0.3162307, y: 0.67905164, z: -0.51444, w: -0.41741896}
-  m_LocalPosition: {x: 0.5179218, y: 11.71, z: -1.2369326}
+  m_LocalRotation: {x: 0.5, y: -0, z: -0, w: 0.8660254}
+  m_LocalPosition: {x: -7.9794254, y: 6.8600006, z: -1.9999952}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 910671716}
@@ -2705,14 +2705,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 615910005}
-  m_LocalRotation: {x: -0.3162307, y: 0.67905164, z: -0.51444, w: -0.41741896}
-  m_LocalPosition: {x: 0.5179218, y: 11.71, z: -1.2369326}
+  m_LocalRotation: {x: 0.5, y: 0, z: 0, w: 0.8660254}
+  m_LocalPosition: {x: -7.9794254, y: 6.8600006, z: -1.9999952}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1830807600}
   m_Father: {fileID: 857460444}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!114 &615910007
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4260,11 +4260,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4040736182878654, guid: 38d6979e97dda4642a626c28e303b448, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.99
+      value: -7.98
       objectReference: {fileID: 0}
     - target: {fileID: 4040736182878654, guid: 38d6979e97dda4642a626c28e303b448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.7
+      value: 0.74
       objectReference: {fileID: 0}
     - target: {fileID: 4040736182878654, guid: 38d6979e97dda4642a626c28e303b448, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4286,6 +4286,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 114448632099804934, guid: 38d6979e97dda4642a626c28e303b448,
+        type: 3}
+      propertyPath: MaxSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114448632099804934, guid: 38d6979e97dda4642a626c28e303b448,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
         type: 3}
       propertyPath: brake
@@ -4294,12 +4304,27 @@ PrefabInstance:
     - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
         type: 3}
       propertyPath: steerLeft
-      value: 113
+      value: 48
       objectReference: {fileID: 0}
     - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
         type: 3}
       propertyPath: accelerate
       value: 122
+      objectReference: {fileID: 0}
+    - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
+        type: 3}
+      propertyPath: steerRight
+      value: 48
+      objectReference: {fileID: 0}
+    - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
+        type: 3}
+      propertyPath: strafeLeft
+      value: 113
+      objectReference: {fileID: 0}
+    - target: {fileID: 114859032027839352, guid: 38d6979e97dda4642a626c28e303b448,
+        type: 3}
+      propertyPath: strafeRight
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 199904963897360490, guid: 38d6979e97dda4642a626c28e303b448,
         type: 3}
@@ -5326,7 +5351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 6.01, z: -1.69}
+  m_FollowOffset: {x: 0, y: 6.1200004, z: -0.0005748294}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1

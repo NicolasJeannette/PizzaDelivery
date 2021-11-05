@@ -12,14 +12,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11b0d68efdcb67b49b5e649862afff07, type: 3}
   m_Name: VehicleBehaviourSettings_Motorbike
   m_EditorClassIdentifier: 
-  acceleration: 12
-  maxSpeed: 30
+  acceleration: 100
+  maxSpeed: 100
   breakSpeed: 1.7
+  boostSpeed: 200
   maxSpeedToStartReverse: 150
-  steering: 80
-  gravity: 10
-  drift: 1
-  vehicleBodyTilt: 0
-  forwardTilt: 8
+  steering: 20.5
+  maxStrafingSpeed: 40
+  gravity: 3.02
+  drift: 0.331
+  vehicleBodyTilt: 3
+  forwardTilt: 2.06
+  straf: 11.1
   turnInAir: 1
+  turnWhenStationary: 1
   twoWheelTilt: 1
+  stopSlopeSlide: 1
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 1

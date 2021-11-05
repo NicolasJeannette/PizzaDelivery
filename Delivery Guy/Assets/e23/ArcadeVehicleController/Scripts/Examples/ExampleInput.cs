@@ -30,8 +30,8 @@ namespace e23.VehicleController.Examples
 		private void Update()
 		{
 			// Acceleration
-			if (Input.GetKey(accelerate)) { VehicleBehaviour.ControlAcceleration(); }
-			if (Input.GetKey(brake)) { VehicleBehaviour.ControlBrake(); }
+			VehicleBehaviour.ControlAcceleration();
+			//if (Input.GetKey(brake)) { VehicleBehaviour.ControlBrake(); }
 
 			// Steering
 			if (Input.GetKey(steerLeft)) { VehicleBehaviour.ControlTurning(-1); }
