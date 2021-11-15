@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4999021217133350600}
   - component: {fileID: 1015750077879003151}
   - component: {fileID: 2959446314587927258}
-  - component: {fileID: 6020328681255502397}
   - component: {fileID: -1067777306586394682}
+  - component: {fileID: 7018321646430606635}
   m_Layer: 0
   m_Name: Pizza_Cardboard
   m_TagString: Untagged
@@ -28,13 +28,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 204927809603325087}
-  m_LocalRotation: {x: 0.60534763, y: 0.41043964, z: -0.5687533, w: 0.37631541}
+  m_LocalRotation: {x: -0.7010574, y: 0.092296004, z: -0.092296004, w: 0.7010574}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 67.292, y: -100.419, z: -190.274}
+  m_LocalEulerAnglesHint: {x: -75, y: 90, z: -90}
 --- !u!33 &4999021217133350600
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -97,25 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &6020328681255502397
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204927809603325087}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0b84586fc1d14494e8fe31d771a8ed06, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &-1067777306586394682
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,4 +109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6b69a24d6bf8b47882777e1071115f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  compteur: {fileID: 0}
+--- !u!114 &7018321646430606635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204927809603325087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52c1702698a6c4a4b9ab031017246b43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  easeType: 21
+  loopType: 1
