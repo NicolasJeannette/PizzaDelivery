@@ -44,10 +44,6 @@ public class CompteurCardboard : MonoBehaviour
         nbCarton++;
 
         pizzaBox.SetParent(pizzaBoxAnchor);
-        
-        var pizzaBoxPos = pizzaBoxAnchor.position;
-        pizzaBoxPos.y += nbCarton * pizzaBox.GetChild(0).localScale.y;
-        pizzaBox.position = pizzaBoxPos;
     }
 
     private void OnTriggerEnter(Collider other)

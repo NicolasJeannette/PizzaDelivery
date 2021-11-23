@@ -6006,6 +6006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inline_Carboard_3 1 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 2726288717644631706, guid: 722a4b63740be874e920ecf7064bcece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3233013192538758520, guid: 722a4b63740be874e920ecf7064bcece,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -20971,6 +20976,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inline_Carboard_3 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726288717644631706, guid: 722a4b63740be874e920ecf7064bcece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3233013192538758520, guid: 722a4b63740be874e920ecf7064bcece,
         type: 3}
@@ -41699,6 +41709,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2202766941657066638, guid: 722a4b63740be874e920ecf7064bcece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2266023177319675817, guid: 722a4b63740be874e920ecf7064bcece,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -41753,6 +41768,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4243852881694026365, guid: 722a4b63740be874e920ecf7064bcece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4928267496307370312, guid: 722a4b63740be874e920ecf7064bcece,
         type: 3}
@@ -80733,6 +80753,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Inline_Carboard_3 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2726288717644631706, guid: 722a4b63740be874e920ecf7064bcece,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3233013192538758520, guid: 722a4b63740be874e920ecf7064bcece,
         type: 3}
