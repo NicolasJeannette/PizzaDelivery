@@ -18,7 +18,7 @@ public class ExampleInput : MonoBehaviour
 	[SerializeField] float strafRotateSpeed = 15;
 	[SerializeField] float counterStrafRotateSpeed = 25;
 	[SerializeField] float maxStrafRot = 30;
-	float curRot = 0;
+	public float curRot = 0;
 	
 	float strafDir;
 

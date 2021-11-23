@@ -20,7 +20,7 @@ public class ScriptFinNiveau : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            if (compteur.nbCarton >= 1)
+            if (compteur.NbCarton >= 1)
             {
                 SceneManager.LoadScene("MenuWin");
             }

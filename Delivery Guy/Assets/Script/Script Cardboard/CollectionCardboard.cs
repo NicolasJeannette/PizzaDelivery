@@ -4,28 +4,30 @@ using UnityEngine;
 
 public class CollectionCardboard : MonoBehaviour
 {
-    // Start is called before the first frame update
+    Vector3 baseScale;
 
-    CompteurCardboard compteur;
-    void Awake()
+    private void Start()
     {
-        compteur = GameObject.FindWithTag("Player").GetComponent<CompteurCardboard>();
+        baseScale = transform.localScale;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
-            if (compteur.nbCarton < 15)
+            var playerCarboard = other.GetComponent<CompteurCardboard>();
+            if (playerCarboard.CanPickupPizzaBox())
             {
-                compteur.nbCarton = compteur.nbCarton + 1;
+                playerCarboard.PickupPizzaBox(transform.parent);
+
+                var iTween = GetComponent<iTween>();
+
+                transform.rotation = Quaternion.Euler(Vector3.zero);
+                transform.localScale = baseScale;
+
+                Destroy(iTween);
+                Destroy(this);
             }
-            Destroy(gameObject);
         }
     }
 }
