@@ -23817,7 +23817,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -29552,7 +29552,7 @@ MonoBehaviour:
   m_LookAt: {fileID: 0}
   m_Follow: {fileID: 4040736369461051}
   m_Lens:
-    FieldOfView: 60
+    FieldOfView: 90
     OrthographicSize: 5
     NearClipPlane: 0.3
     FarClipPlane: 1000
@@ -29574,7 +29574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822273458}
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 68.16026, y: 6.850001, z: -59.80001}
+  m_LocalPosition: {x: 63.228214, y: 11.392563, z: -59.80001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1235527703}
@@ -41219,7 +41219,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -41245,7 +41245,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1126568304}
   m_LocalRotation: {x: 0.18301274, y: -0.6830127, z: 0.18301274, w: 0.6830127}
-  m_LocalPosition: {x: 68.16026, y: 6.850001, z: -59.80001}
+  m_LocalPosition: {x: 63.228214, y: 11.392563, z: -59.80001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46448,8 +46448,8 @@ MonoBehaviour:
   m_ZDamping: 1
   m_TargetMovementOnly: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.5
-  m_CameraDistance: 10
+  m_ScreenY: 0.9
+  m_CameraDistance: 8
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
   m_DeadZoneDepth: 0
@@ -81478,12 +81478,12 @@ PrefabInstance:
         type: 3}
       propertyPath: rightAnchor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7298722462991393952}
     - target: {fileID: 7298722462141276190, guid: 33856f39e301ac44d938572ba4811ee4,
         type: 3}
       propertyPath: centerAnchor
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 7298722462991393953}
     - target: {fileID: 7298722462141276190, guid: 33856f39e301ac44d938572ba4811ee4,
         type: 3}
       propertyPath: strafeJoystick
@@ -81562,3 +81562,15 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1828090019, guid: 33856f39e301ac44d938572ba4811ee4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33856f39e301ac44d938572ba4811ee4, type: 3}
+--- !u!4 &7298722462991393952 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 383602543, guid: 33856f39e301ac44d938572ba4811ee4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7298722462991393951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7298722462991393953 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 87161887, guid: 33856f39e301ac44d938572ba4811ee4,
+    type: 3}
+  m_PrefabInstance: {fileID: 7298722462991393951}
+  m_PrefabAsset: {fileID: 0}
