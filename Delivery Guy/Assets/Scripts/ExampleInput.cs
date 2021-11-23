@@ -6,6 +6,8 @@ public class ExampleInput : MonoBehaviour
 #pragma warning disable 0649
 	[SerializeField] KeyCode strafeLeft;
 	[SerializeField] KeyCode strafeRight;
+
+	[SerializeField] Joystick strafeJoystick;
 #pragma warning restore 0649
 
 	[Header("Settings")]
@@ -23,9 +25,10 @@ public class ExampleInput : MonoBehaviour
     private void Update()
 	{
 		// Strafing
-		strafDir = GetStarfDirection();
+		//strafDir = GetStarfDirection();
+		strafDir = strafeJoystick.Horizontal *-1;
 
-		
+
 		if ((transform.localPosition.x > -clampX && strafDir > 0) || (transform.localPosition.x < clampX && strafDir < 0))
         {
 			var dir = centerAnchor.position - rightAnchor.position;
@@ -60,10 +63,10 @@ public class ExampleInput : MonoBehaviour
     {
 		float dir = 0;
 
-		dir += Input.GetKey(strafeLeft) ? 1 : 0;
-		dir += Input.GetKey(strafeRight) ? -1 : 0;
+        dir += Input.GetKey(strafeLeft) ? 1 : 0;
+        dir += Input.GetKey(strafeRight) ? -1 : 0;
 
-		return dir;
+        return dir;
 
 	}
 }
