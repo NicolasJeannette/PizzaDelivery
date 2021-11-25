@@ -13,6 +13,13 @@ public class CompteurCardboard : MonoBehaviour
     public float maxRotEfficiency = 50;
     public float posRotOffset = 1;
 
+    [Header("Information Collider")]
+    public Color flashColor;
+    public Color regularColor;
+    public float flashDuration;
+    public int nbFlash;
+    public Collider triggerCollider;
+
     private void Update()
     {
         for (int i = 0; i < pizzaBoxAnchor.childCount; i++)
@@ -36,7 +43,7 @@ public class CompteurCardboard : MonoBehaviour
 
     public bool CanPickupPizzaBox()
     {
-        return nbCarton < 15;
+        return nbCarton < 40;
     }
 
     public void PickupPizzaBox(Transform pizzaBox)

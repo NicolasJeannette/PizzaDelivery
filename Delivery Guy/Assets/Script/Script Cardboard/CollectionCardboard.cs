@@ -5,8 +5,7 @@ using UnityEngine;
 public class CollectionCardboard : MonoBehaviour
 {
     Vector3 baseScale;
-    float timeToFly = 1.3f;
-
+    float timeToFly = 0.6f;
     private void Start()
     {
         baseScale = transform.localScale;
