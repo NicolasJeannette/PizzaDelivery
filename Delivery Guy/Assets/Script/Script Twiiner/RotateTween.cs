@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
+
 
 public class RotateTween : MonoBehaviour
 {
-    public iTween.EaseType easeType;
-    public iTween.LoopType loopType;
+    public float variableRotate;
+    public float duration;
 
     private void Start()
     {
-        iTween.RotateTo(this.gameObject, iTween.Hash("z", 179, "time", 1.4f, "easetype", easeType, "looptype", loopType));
+        this.transform.DORotate(Vector3.up * variableRotate, duration,RotateMode.WorldAxisAdd).SetLoops(-1).SetEase(Ease.Linear);
     }
 }
