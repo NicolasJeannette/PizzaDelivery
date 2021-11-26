@@ -10,22 +10,30 @@ namespace PathCreation.Examples
         public EndOfPathInstruction endOfPathInstruction;
         public float speed = 5;
         float distanceTravelled;
+        public DemarrageJeu gameManager;
 
         void Start() {
-            if (pathCreator != null)
+            gameManager = GameObject.FindWithTag("GameManager").GetComponent<DemarrageJeu>();
+            if (gameManager.gamePressed)
             {
-                // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
-                pathCreator.pathUpdated += OnPathChanged;
+                if (pathCreator != null)
+                {
+                    // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
+                    pathCreator.pathUpdated += OnPathChanged;
+                }
             }
         }
 
         void Update()
         {
-            if (pathCreator != null)
+            if (gameManager.gamePressed)
             {
-                distanceTravelled += speed * Time.deltaTime;
-                transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
-                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+                if (pathCreator != null)
+                {
+                    distanceTravelled += speed * Time.deltaTime;
+                    transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
+                    transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
+                }
             }
         }
 

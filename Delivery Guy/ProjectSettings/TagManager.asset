@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ennemy
   - EndZone
+  - PathJoueur
+  - GameManager
   layers:
   - Default
   - TransparentFX
