@@ -25,7 +25,7 @@ public class EndOfPath : MonoBehaviour
             
             latestPizzaBox.SetParent(endOfPathAnchor);
             var newPos = endOfPathAnchor.position;
-            newPos.y = compteurCardboard.pizzaBoxAnchor.childCount * latestPizzaBox.GetChild(0).localScale.y;
+            newPos.y = compteurCardboard.pizzaBoxAnchor.childCount * 0.1f;
             latestPizzaBox.position = newPos;
 
             yield return new WaitForSeconds(timeToReceivePizza);
