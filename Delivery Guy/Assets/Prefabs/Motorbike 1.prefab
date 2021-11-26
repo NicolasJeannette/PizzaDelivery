@@ -102,6 +102,8 @@ GameObject:
   - component: {fileID: 7253706470342022612}
   - component: {fileID: 7298722462141276190}
   - component: {fileID: 1234242457}
+  - component: {fileID: 649870410}
+  - component: {fileID: 649870411}
   m_Layer: 0
   m_Name: Vehicle
   m_TagString: Player
@@ -117,7 +119,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7298562431244598322}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0.69, z: -1.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7303559986392316478}
@@ -139,8 +141,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0340201
-  m_Center: {x: -4.961682e-16, y: -0.46508515, z: 0}
+  m_Radius: 1.0581
+  m_Center: {x: -0.0957391, y: -0.38715017, z: 3.703011e-16}
 --- !u!114 &7298722462141276190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,12 +160,12 @@ MonoBehaviour:
   strafeJoystick: {fileID: 0}
   centerAnchor: {fileID: 87161887}
   rightAnchor: {fileID: 383602543}
-  clampX: 4
+  clampX: 6
   strafSpeed: 10
   strafRotateSpeed: 90
   counterStrafRotateSpeed: 150
   maxStrafRot: 30
-  curRot: 0
+  curRot: -0.9751192
 --- !u!114 &1234242457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -177,11 +179,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nbCarton: 0
-  pizzaBoxAnchor: {fileID: 0}
-  exampleInput: {fileID: 0}
+  pizzaBoxAnchor: {fileID: 1257913649}
+  exampleInput: {fileID: 7298722462141276190}
   minRotEfficiency: 0
-  maxRotEfficiency: 50
-  posRotOffset: 1
+  maxRotEfficiency: 0.5
+  posRotOffset: 0.1
+  pizzaBoxY: 0
+  rotCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  posCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  evaluateSmoothness: 0.01
+--- !u!54 &649870410
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298562431244598322}
+  serializedVersion: 2
+  m_Mass: 10
+  m_Drag: 0
+  m_AngularDrag: 35.3
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!135 &649870411
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7298562431244598322}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.0581
+  m_Center: {x: -0.0957391, y: -0.38715017, z: 3.703011e-16}
 --- !u!1 &7298567161031623512
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +833,7 @@ GameObject:
   - component: {fileID: 7298722462150927534}
   m_Layer: 0
   m_Name: Motorbike 1
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -802,7 +847,7 @@ Transform:
   m_GameObject: {fileID: 7299313475360036324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 59.5, y: 1.85, z: -59.8}
-  m_LocalScale: {x: 1, y: 1, z: 1.0263}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7303435018301069956}
   - {fileID: 87161887}
@@ -819,8 +864,8 @@ PositionConstraint:
   m_GameObject: {fileID: 7299313475360036324}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 59.5, y: 1.85, z: -59.8}
-  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_TranslationAtRest: {x: 55.14, y: 1.85, z: -59.783016}
+  m_TranslationOffset: {x: -4.3600006, y: 0, z: 0.016983032}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
@@ -838,7 +883,7 @@ RotationConstraint:
   m_GameObject: {fileID: 7299313475360036324}
   m_Enabled: 1
   m_Weight: 1
-  m_RotationAtRest: {x: 0, y: 0, z: 90}
+  m_RotationAtRest: {x: 0, y: -90, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_AffectRotationX: 1
   m_AffectRotationY: 1
@@ -874,7 +919,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7299382061755936698}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: -0.00000004371139}
-  m_LocalPosition: {x: 0, y: -1.013, z: -0.352}
+  m_LocalPosition: {x: -0, y: -0.15, z: -0.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7303435018301069956}

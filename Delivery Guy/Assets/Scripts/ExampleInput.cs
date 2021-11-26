@@ -19,7 +19,7 @@ public class ExampleInput : MonoBehaviour
 	[SerializeField] float strafSpeed;
 	[SerializeField] float strafRotateSpeed = 15;
 	[SerializeField] float counterStrafRotateSpeed = 25;
-	[SerializeField] float maxStrafRot = 30;
+	[SerializeField] public float maxStrafRot = 30;
 	public float curRot = 0;
 	
 	float strafDir;
@@ -37,12 +37,17 @@ public class ExampleInput : MonoBehaviour
 
 	        transform.Translate(dir.normalized * strafSpeed * strafDir * Time.deltaTime, Space.World);
         }
-
-        if (strafDir != 0)
+		
+		if (strafDir != 0)
         {
 			if ((curRot < maxStrafRot && strafDir > 0) || (curRot > -maxStrafRot && strafDir < 0))
             {
 				var rot = strafRotateSpeed * strafDir * Time.deltaTime;
+
+				if (curRot > 0 && strafDir < 0 || curRot < 0 && strafDir > 0)
+                {
+					rot *= 2;
+                }
 
 				transform.Rotate(Vector3.forward * rot, Space.Self);
 
@@ -71,9 +76,4 @@ public class ExampleInput : MonoBehaviour
         return dir;
 
 	}
-
-    private void OnCollisionEnter(Collision collision)
-    {
-		
-    }
 }

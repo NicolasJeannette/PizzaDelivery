@@ -12,10 +12,6 @@ public class CompteurCardboard : MonoBehaviour
     public float minRotEfficiency = 0;
     public float maxRotEfficiency = 50;
     public float posRotOffset = 1;
-    public float pizzaBoxY;
-    public AnimationCurve rotCurve;
-    public AnimationCurve posCurve;
-    public float evaluateSmoothness = 0.01f;
 
     private void Update()
     {
@@ -26,14 +22,14 @@ public class CompteurCardboard : MonoBehaviour
             var pizzaEfficiencyPercentage = (float)i / (float)pizzaBoxAnchor.childCount;
 
             var pizzaBoxPos = pizzaBoxAnchor.position;
-            pizzaBoxPos += transform.right * -exampleInput.curRot * posRotOffset * posCurve.Evaluate(pizzaEfficiencyPercentage);
-            pizzaBoxPos.y = pizzaBoxAnchor.position.y + i * pizzaBoxY;
+            //pizzaBoxPos += transform.right * -exampleInput.curRot * posRotOffset * pizzaEfficiencyPercentage;
+            pizzaBoxPos.y = pizzaBoxAnchor.position.y /*+ (i * pizzaBox.GetChild(0).localScale.y)*/;
+
+            var currentEfficiency = Mathf.Lerp(minRotEfficiency, maxRotEfficiency, pizzaEfficiencyPercentage);
+            //pizzaBox.Rotate(0, 0, -exampleInput.curRot * currentEfficiency, Space.Self);
 
             pizzaBox.position = pizzaBoxPos;
             pizzaBox.rotation = pizzaBoxAnchor.rotation;
-
-            var efficiency = rotCurve.Evaluate(i * evaluateSmoothness);
-            pizzaBox.Rotate(0, 0, exampleInput.curRot * efficiency, Space.Self);
         }
     }
 

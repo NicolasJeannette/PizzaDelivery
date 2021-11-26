@@ -42,14 +42,14 @@ public class CollectionCardboard : MonoBehaviour
             }
         }
 
-        compteurCardboard.PickupPizzaBox(transform.parent);
-
         var iTween = GetComponent<iTween>();
+        Destroy(iTween);
 
-        transform.rotation = Quaternion.Euler(Vector3.zero);
+        transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 180));
         transform.localScale = baseScale;
 
-        Destroy(iTween);
+        compteurCardboard.PickupPizzaBox(transform.parent);
+
         Destroy(this);
     }
 }
