@@ -29,9 +29,8 @@ public class CompteurCardboard : MonoBehaviour
             var pizzaEfficiencyPercentage = (float)i / (float)pizzaBoxAnchor.childCount;
 
             var pizzaBoxPos = pizzaBoxAnchor.position;
-            pizzaBoxPos.y += i * pizzaBox.GetChild(0).localScale.y;
-            pizzaBoxPos.z += -exampleInput.curRot * 0.1f * posRotOffset * pizzaEfficiencyPercentage;
-
+            pizzaBoxPos += transform.right * -exampleInput.curRot * posRotOffset * pizzaEfficiencyPercentage;
+            pizzaBoxPos.y = pizzaBoxAnchor.localPosition.y + i * pizzaBox.GetChild(0).localScale.y;
 
             pizzaBox.rotation = pizzaBoxAnchor.rotation;
             var currentEfficiency = Mathf.Lerp(minRotEfficiency, maxRotEfficiency, pizzaEfficiencyPercentage);

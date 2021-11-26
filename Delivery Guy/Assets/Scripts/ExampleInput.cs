@@ -2,6 +2,8 @@
 
 public class ExampleInput : MonoBehaviour
 {
+
+
 	[Header("Controls")]
 #pragma warning disable 0649
 	[SerializeField] KeyCode strafeLeft;
@@ -24,9 +26,9 @@ public class ExampleInput : MonoBehaviour
 
     private void Update()
 	{
-		// Strafing
-		//strafDir = GetStarfDirection();
-		strafDir = strafeJoystick.Horizontal *-1;
+        // Strafing
+        strafDir = GetStarfDirection();
+        //strafDir = strafeJoystick.Horizontal *-1;
 
 
 		if ((transform.localPosition.x > -clampX && strafDir > 0) || (transform.localPosition.x < clampX && strafDir < 0))
@@ -69,4 +71,9 @@ public class ExampleInput : MonoBehaviour
         return dir;
 
 	}
+
+    private void OnCollisionEnter(Collision collision)
+    {
+		
+    }
 }
