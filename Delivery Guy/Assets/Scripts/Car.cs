@@ -4,23 +4,31 @@ using UnityEngine;
 
 public class Car : MonoBehaviour
 {
-    public float f;
+    public float speed = 30f;
+    public float collideForce = 10f;
+    public PathCreation.Examples.PathFollower pathFollower;
 
-    // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.Translate(-transform.forward * speed * Time.deltaTime, Space.World);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
-            GetComponent<Rigidbody>().AddForce((collision.transform.position - transform.position) * f, ForceMode.Impulse);
+        {
+            var ei = collision.gameObject.GetComponent<ExampleInput>();
+            var collideDir = collision.transform.position - transform.position;
+            ei.curRot = collideDir.magnitude > 0 ? ei.maxStrafRot : -ei.maxStrafRot;
+            ei.GetComponent<Rigidbody>().AddForce(collideDir * collideForce, ForceMode.Impulse);
+
+            speed = 0;
+            //pathFollower.speed = 0;
+        }
     }
 }
