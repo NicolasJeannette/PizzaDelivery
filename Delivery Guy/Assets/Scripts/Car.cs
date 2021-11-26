@@ -22,13 +22,21 @@ public class Car : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            var ei = collision.gameObject.GetComponent<ExampleInput>();
-            var collideDir = collision.transform.position - transform.position;
-            ei.curRot = collideDir.magnitude > 0 ? ei.maxStrafRot : -ei.maxStrafRot;
-            ei.GetComponent<Rigidbody>().AddForce(collideDir * collideForce, ForceMode.Impulse);
+            var cc = collision.gameObject.GetComponent<CompteurCardboard>();
+            cc.LooseOnePizza();
+
+            this.GetComponent<Rigidbody>().AddForce(Vector3.up * collideForce, ForceMode.Impulse);
 
             speed = 0;
-            //pathFollower.speed = 0;
+
+            StartCoroutine(Recall());
         }
+    }
+
+    private IEnumerator Recall()
+    {
+        pathFollower.speed *= -1;
+        yield return new WaitForSeconds(0.3f);
+        pathFollower.speed *= -1;
     }
 }
