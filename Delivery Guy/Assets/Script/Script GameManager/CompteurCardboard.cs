@@ -9,6 +9,7 @@ public class CompteurCardboard : MonoBehaviour
     public Transform pizzaBoxAnchor;
     public ExampleInput exampleInput;
 
+    [Header("Control")]
     public float minRotEfficiency = 0;
     public float maxRotEfficiency = 50;
     public float posRotOffset = 1;
@@ -16,6 +17,11 @@ public class CompteurCardboard : MonoBehaviour
     public AnimationCurve rotCurve;
     public AnimationCurve posCurve;
     public float evaluateSmoothness = 0.01f;
+
+    [Header("")]
+    public float pizzaDisapearTime = 0.7f;
+    public float pizzaDisapearRot = 90;
+    public AnimationCurve pizzaScaleCurve;
 
     private void Update()
     {
@@ -48,17 +54,33 @@ public class CompteurCardboard : MonoBehaviour
 
         pizzaBox.SetParent(pizzaBoxAnchor);
     }
-
-    private void OnTriggerEnter(Collider other)
+    public void LooseOnePizza()
     {
-        // TODO : Enlever des cartons tant qu'on collide avec une voiture
-        if (other.gameObject.tag == "Ennemy")
+        if (nbCarton > 0)
         {
-            if (nbCarton > 0)
-            {
-                nbCarton -= 1;
-                Destroy(pizzaBoxAnchor.GetChild(nbCarton).gameObject);
-            }
+            StartCoroutine(PizzaDisapear());
         }
+    }
+
+    private IEnumerator PizzaDisapear()
+    {
+        var pizzaToDestroy = pizzaBoxAnchor.GetChild(pizzaBoxAnchor.childCount - 1);
+        var baseLocalScale = pizzaToDestroy.localScale;
+        float curTime = 0;
+
+        var rotDir = Random.Range(0f, 1f) > 0.5f ? 1 : -1;
+
+        yield return new WaitWhile(() =>
+        {
+            curTime += Time.deltaTime;
+
+            pizzaToDestroy.localScale = baseLocalScale * pizzaScaleCurve.Evaluate(curTime / pizzaDisapearTime);
+            pizzaToDestroy.Rotate(Vector3.up * pizzaDisapearRot * rotDir * pizzaScaleCurve.Evaluate(curTime / pizzaDisapearTime));
+
+            return curTime < pizzaDisapearTime;
+        });
+
+        nbCarton -= 1;
+        Destroy(pizzaToDestroy.gameObject);
     }
 }

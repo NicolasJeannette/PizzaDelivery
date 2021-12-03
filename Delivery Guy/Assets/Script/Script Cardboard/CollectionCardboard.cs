@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class CollectionCardboard : MonoBehaviour
 {
+    public AnimationCurve scaleCurve;
     Vector3 baseScale;
-    float timeToFly = 0.6f;
+    public float timeToFly = 0.6f;
+    
     private void Start()
     {
         baseScale = transform.localScale;
@@ -33,7 +35,10 @@ public class CollectionCardboard : MonoBehaviour
             pizzaBoxPos.y += compteurCardboard.pizzaBoxAnchor.childCount * transform.localScale.y;
 
             transform.parent.position = Vector3.Lerp(transform.parent.position, pizzaBoxPos, currentTime / timeToFly);
+            transform.localScale = baseScale * scaleCurve.Evaluate(currentTime / timeToFly);
+
             yield return new WaitForEndOfFrame();
+            
             currentTime += Time.deltaTime;
 
             if (Vector3.Distance(transform.parent.position, pizzaBoxPos) < 0.1f)
