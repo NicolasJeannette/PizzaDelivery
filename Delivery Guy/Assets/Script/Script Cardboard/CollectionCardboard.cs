@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class CollectionCardboard : MonoBehaviour
 {
@@ -47,8 +48,8 @@ public class CollectionCardboard : MonoBehaviour
             }
         }
 
-        var iTween = GetComponent<iTween>();
-        Destroy(iTween);
+        transform.DOKill();
+        
 
         transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 180));
         transform.localScale = baseScale;
