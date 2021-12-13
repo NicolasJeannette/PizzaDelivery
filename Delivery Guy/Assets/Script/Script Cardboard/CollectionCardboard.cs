@@ -8,6 +8,7 @@ public class CollectionCardboard : MonoBehaviour
     public AnimationCurve scaleCurve;
     Vector3 baseScale;
     public float timeToFly = 0.6f;
+    bool verificationCollecte;
     
     private void Start()
     {
@@ -19,8 +20,9 @@ public class CollectionCardboard : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             var playerCarboard = other.GetComponent<CompteurCardboard>();
-            if (playerCarboard.CanPickupPizzaBox())
+            if (playerCarboard.CanPickupPizzaBox() && verificationCollecte == false)
             {
+                verificationCollecte = true;
                 StartCoroutine(MoveToScooter(playerCarboard));
             }
         }
