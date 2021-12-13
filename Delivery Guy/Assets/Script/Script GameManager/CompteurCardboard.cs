@@ -70,7 +70,7 @@ public class CompteurCardboard : MonoBehaviour
 
         var rotDir = Random.Range(0f, 1f) > 0.5f ? 1 : -1;
 
-        yield return new WaitWhile(() =>
+        yield return new  WaitWhile(() =>
         {
             curTime += Time.deltaTime;
 

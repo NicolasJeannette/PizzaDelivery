@@ -20,7 +20,7 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+       if(collision.gameObject.tag == "Player")
         {
             var cc = collision.gameObject.GetComponent<CompteurCardboard>();
             cc.LooseOnePizza();
@@ -29,7 +29,7 @@ public class Car : MonoBehaviour
 
             speed = 0;
 
-            StartCoroutine(Recall());
+            //StartCoroutine(Recall());
         }
     }
 
