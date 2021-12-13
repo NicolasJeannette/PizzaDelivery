@@ -25,7 +25,7 @@ public class Car : MonoBehaviour
             var cc = collision.gameObject.GetComponent<CompteurCardboard>();
             cc.LooseOnePizza();
 
-            this.GetComponent<Rigidbody>().AddForce(Vector3.up * collideForce, ForceMode.Impulse);
+            //this.GetComponent<Rigidbody>().AddForce(Vector3.up * collideForce, ForceMode.Impulse);
 
             speed = 0;
 
