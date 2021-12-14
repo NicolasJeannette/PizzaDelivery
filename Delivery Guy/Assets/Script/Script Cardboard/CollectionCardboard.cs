@@ -34,13 +34,13 @@ public class CollectionCardboard : MonoBehaviour
         }
     }
 
-        private IEnumerator JumpInBagRoutine(CompteurCardboard compteurCardboard)
+    private IEnumerator JumpInBagRoutine(CompteurCardboard compteurCardboard)
     {
         var pizzaBoxNb = compteurCardboard.GrabPizzaBox();
 
         transform.SetParent(null);
 
-        Vector3 targetTransform = compteurCardboard.pizzaBoxScooter.position;
+        Vector3 targetTransform = compteurCardboard.pizzaBoxScooter.position + Vector3.up * pizzaBoxNb;
 
         Vector3 initialTransform = this.transform.position;
 
@@ -58,7 +58,7 @@ public class CollectionCardboard : MonoBehaviour
         while (_t < _targetT)
         {
             float _ratioToEnd = _t / _targetT;
-            targetTransform = compteurCardboard.pizzaBoxScooter.position;
+            targetTransform = compteurCardboard.pizzaBoxScooter.position + Vector3.up * pizzaBoxNb;
             this.transform.position = BezierCurve.QuadraticCurve(initialTransform, halfPoint, targetTransform, _ratioToEnd);
 
 

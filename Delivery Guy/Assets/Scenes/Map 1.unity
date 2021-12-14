@@ -69636,9 +69636,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
         type: 3}
+      propertyPath: mediant
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
       propertyPath: pizzaBoxAnchor
       value: 
       objectReference: {fileID: 1767395720}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
+      propertyPath: stackCurve.m_PostInfinity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
         type: 3}
       propertyPath: pathFollowers.Array.data[0]
@@ -69649,6 +69659,26 @@ PrefabInstance:
       propertyPath: pathFollowers.Array.data[1]
       value: 
       objectReference: {fileID: 1731989059}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
+      propertyPath: stackCurve.m_Curve.Array.data[0].time
+      value: 0.012500763
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
+      propertyPath: stackCurve.m_Curve.Array.data[1].time
+      value: 0.9125061
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
+      propertyPath: stackCurve.m_Curve.Array.data[0].value
+      value: 0.8076782
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
+        type: 3}
+      propertyPath: stackCurve.m_Curve.Array.data[1].value
+      value: 0.26766586
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b13041c1e773474409afe49af59e3b1b, type: 3}
 --- !u!1 &1882929797
