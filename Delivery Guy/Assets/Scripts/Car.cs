@@ -35,10 +35,13 @@ public class Car : MonoBehaviour
             var cc = collision.gameObject.GetComponent<CompteurCardboard>();
             cc.LooseOnePizza();
 
-            StartLerping();
+            
+
             speed = 0;
             foreach (PathFollower pf in cc.pathFollowers)
                 StartCoroutine(Recall(pf));
+            StartLerping();
+
         }
     }
 
@@ -56,18 +59,14 @@ public class Car : MonoBehaviour
         _timeStartedLerping = Time.time;
 
         //We set the start position to the current position, and the finish to 10 spaces in the 'forward' direction
-        _positionDepart = transform.position; /*rigidbody.position;*/
-        _positionFin = new Vector3(transform.position.x - distanceBump, transform.position.y, transform.position.z);
+        _positionDepart = rigidbody.position; /*;*/
+        _positionFin = new Vector3(rigidbody.position.x - distanceBump, rigidbody.position.y, rigidbody.position.z);
     }
 
     void FixedUpdate()
     {
         if (estBump)
         {
-            if (pathFollower != null)
-            {
-                pathFollower.enabled = false;
-            }
             
             //We want percentage = 0.0 when Time.time = _timeStartedLerping
             //and percentage = 1.0 when Time.time = _timeStartedLerping + timeTakenDuringLerp
@@ -79,17 +78,12 @@ public class Car : MonoBehaviour
             //Perform the actual lerping.  Notice that the first two parameters will always be the same
             //throughout a single lerp-processs (ie. they won't change until we hit the space-bar again
             //to start another lerp)
-            transform.position = Vector3.Lerp(_positionDepart, _positionFin, percentageComplete);
+            rigidbody.position = Vector3.Lerp(_positionDepart, _positionFin, percentageComplete);
 
             //When we've completed the lerp, we set _isLerping to false
             if (percentageComplete >= 1.0f)
             {
                 estBump = false;
-                if (pathFollower != null)
-                {
-                    pathFollower.enabled = true;
-                }
-                
             }
         }
     }
