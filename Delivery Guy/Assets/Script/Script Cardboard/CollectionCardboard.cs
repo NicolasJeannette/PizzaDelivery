@@ -7,11 +7,15 @@ public class CollectionCardboard : MonoBehaviour
 {
     public AnimationCurve scaleCurve;
     Vector3 baseScale;
-    public float timeToFly = 0.6f;
-    
+    public float timeToFly = 2f;
+    public float localY = 1f;
+    public const float mediantY = 3f;
+
     private void Start()
     {
-        baseScale = transform.localScale;
+        baseScale = transform.GetChild(0).localScale;
+        timeToFly = 0.9f;
+        localY = 0.3f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,40 +25,50 @@ public class CollectionCardboard : MonoBehaviour
             var playerCarboard = other.GetComponent<CompteurCardboard>();
             if (playerCarboard.CanPickupPizzaBox())
             {
-                StartCoroutine(MoveToScooter(playerCarboard));
+                StartCoroutine(JumpInBagRoutine(playerCarboard));
             }
         }
     }
 
-    private IEnumerator MoveToScooter(CompteurCardboard compteurCardboard)
+    private IEnumerator JumpInBagRoutine(CompteurCardboard compteurCardboard)
     {
-        float currentTime = 0;
+        var pizzaBoxNb = compteurCardboard.GrabPizzaBox();
 
-        while (currentTime < timeToFly)
+        transform.SetParent(null);
+
+        Vector3 targetTransform = compteurCardboard.pizzaBoxScooter.position;
+
+        Vector3 initialTransform = this.transform.position;
+
+
+        Vector3 halfPoint = new Vector3(
+            (targetTransform.x + initialTransform.x) / 2,
+            initialTransform.y + compteurCardboard.mediant + pizzaBoxNb * compteurCardboard.stackCurve.Evaluate(pizzaBoxNb / CompteurCardboard.MAX_BOX),
+            (targetTransform.z + initialTransform.z) / 2
+        );
+
+
+        float _t = 0;
+        float _targetT = timeToFly;
+
+        while (_t < _targetT)
         {
-            var pizzaBoxPos = compteurCardboard.pizzaBoxAnchor.position;
-            pizzaBoxPos.y += compteurCardboard.pizzaBoxAnchor.childCount * transform.localScale.y;
+            float _ratioToEnd = _t / _targetT;
+            targetTransform = compteurCardboard.pizzaBoxScooter.position;
+            this.transform.position = BezierCurve.QuadraticCurve(initialTransform, halfPoint, targetTransform, _ratioToEnd);
 
-            transform.parent.position = Vector3.Lerp(transform.parent.position, pizzaBoxPos, currentTime / timeToFly);
-            transform.localScale = baseScale * scaleCurve.Evaluate(currentTime / timeToFly);
 
-            yield return new WaitForEndOfFrame();
-            
-            currentTime += Time.deltaTime;
-
-            if (Vector3.Distance(transform.parent.position, pizzaBoxPos) < 0.1f)
-            {
-                currentTime = timeToFly;
-            }
+            _t += Time.deltaTime;
+            yield return null;
         }
 
-        transform.DOKill();
-        
+        var child = transform.GetChild(0);
+        child.DOKill();
 
-        transform.localRotation = Quaternion.Euler(new Vector3(-90, 0, 180));
-        transform.localScale = baseScale;
+        child.localRotation = Quaternion.Euler(new Vector3(-90, 0, 180));
+        child.localScale = baseScale;
 
-        compteurCardboard.PickupPizzaBox(transform.parent);
+        compteurCardboard.PickupPizzaBox(transform);
 
         Destroy(this);
     }

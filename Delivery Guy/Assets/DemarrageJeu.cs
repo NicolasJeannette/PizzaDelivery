@@ -22,7 +22,7 @@ public class DemarrageJeu : MonoBehaviour
             if (gamePressed)
             {
                 texte.SetActive(false);
-                pathfollower.speed = 14f;
+                //pathfollower.speed = 14f;
             }  
     }
     public void OnClick()

@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3500484673054489961}
+  - component: {fileID: 3221099664911292118}
+  - component: {fileID: 6976443821635472037}
   m_Layer: 0
   m_Name: Pizza Box
   m_TagString: Untagged
@@ -31,6 +33,66 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3221099664911292118
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204927809603325087}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &6976443821635472037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204927809603325087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf6b69a24d6bf8b47882777e1071115f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.016864777
+      value: 0.30527115
+      inSlope: -0.20782387
+      outSlope: -0.20782387
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.44499037
+    - serializedVersion: 3
+      time: 0.4573197
+      value: 0.28001815
+      inSlope: 0.05182036
+      outSlope: 0.05182036
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.22721915
+    - serializedVersion: 3
+      time: 1.0113556
+      value: 0.69301236
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  timeToFly: 0.9
+  localY: 1
 --- !u!1 &6819929921764652626
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,9 +104,7 @@ GameObject:
   - component: {fileID: 5686050101671686541}
   - component: {fileID: 8211767740751283018}
   - component: {fileID: 1503318217304894075}
-  - component: {fileID: 8710295765410874764}
   - component: {fileID: 6142172408764018054}
-  - component: {fileID: 162323118005177320}
   m_Layer: 0
   m_Name: model
   m_TagString: Untagged
@@ -115,52 +175,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8710295765410874764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819929921764652626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf6b69a24d6bf8b47882777e1071115f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scaleCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: -0.016864777
-      value: 0.30527115
-      inSlope: -0.20782387
-      outSlope: -0.20782387
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.44499037
-    - serializedVersion: 3
-      time: 0.4573197
-      value: 0.28001815
-      inSlope: 0.05182036
-      outSlope: 0.05182036
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.22721915
-    - serializedVersion: 3
-      time: 1.0113556
-      value: 0.69301236
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  timeToFly: 0.9
 --- !u!114 &6142172408764018054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,16 +189,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   variableRotate: 360
   duration: 1.5
---- !u!135 &162323118005177320
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6819929921764652626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 56.7
-  m_Center: {x: -0.000000086118284, y: 0.00012207031, z: 2.8896503}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PathCreation.Examples;
 
 public class Car : MonoBehaviour
 {
@@ -29,14 +30,15 @@ public class Car : MonoBehaviour
 
             speed = 0;
 
-            StartCoroutine(Recall());
+            foreach (PathFollower pf in cc.pathFollowers)
+                StartCoroutine(Recall(pf));
         }
     }
 
-    private IEnumerator Recall()
+    private IEnumerator Recall(PathFollower pathFollower)
     {
         pathFollower.speed *= -1;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.4f);
         pathFollower.speed *= -1;
     }
 }
