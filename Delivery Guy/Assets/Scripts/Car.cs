@@ -29,7 +29,7 @@ public class Car : MonoBehaviour
 
             speed = 0;
 
-            //StartCoroutine(Recall());
+            StartCoroutine(Recall());
         }
     }
 
