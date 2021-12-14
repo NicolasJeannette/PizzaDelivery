@@ -106,7 +106,6 @@ public class CompteurCardboard : MonoBehaviour
 
         Vector3 initialTransform = pizzaToDestroy.position;
 
-
         Vector3 halfPoint = new Vector3(
             (targetTransform.x + initialTransform.x) / 2,
             initialTransform.y + 6f,
