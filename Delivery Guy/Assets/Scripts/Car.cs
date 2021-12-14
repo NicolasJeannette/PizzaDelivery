@@ -64,7 +64,11 @@ public class Car : MonoBehaviour
     {
         if (estBump)
         {
-            pathFollower.enabled = false;
+            if (pathFollower != null)
+            {
+                pathFollower.enabled = false;
+            }
+            
             //We want percentage = 0.0 when Time.time = _timeStartedLerping
             //and percentage = 1.0 when Time.time = _timeStartedLerping + timeTakenDuringLerp
             //In other words, we want to know what percentage of "timeTakenDuringLerp" the value
@@ -81,7 +85,11 @@ public class Car : MonoBehaviour
             if (percentageComplete >= 1.0f)
             {
                 estBump = false;
-                pathFollower.enabled = true;
+                if (pathFollower != null)
+                {
+                    pathFollower.enabled = true;
+                }
+                
             }
         }
     }

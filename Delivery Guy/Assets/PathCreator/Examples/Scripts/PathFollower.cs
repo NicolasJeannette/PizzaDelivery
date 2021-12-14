@@ -12,30 +12,30 @@ namespace PathCreation.Examples
         float distanceTravelled;
         public DemarrageJeu gameManager;
 
-        void Start() {
-            //gameManager = GameObject.FindWithTag("GameManager").GetComponent<DemarrageJeu>();
-            //gameManager.gamePressed = true;
-            //if (gameManager.gamePressed)
-            //{
-            //    if (pathCreator != null)
-            //    {
-                    // Subscribed to the pathUpdated event so that we're notified if the path changes during the game
+        void Start() 
+        {
+            gameManager = GameObject.FindWithTag("GameManager").GetComponent<DemarrageJeu>();
+            if (gameManager.gamePressed)
+            {
+                if (pathCreator != null)
+                {
+                    //Subscribed to the pathUpdated event so that we're notified if the path changes during the game
                     pathCreator.pathUpdated += OnPathChanged;
-            //    }
-            //}
+                }
+}
         }
 
         void Update()
         {
-            //if (gameManager.gamePressed)
-            //{
-            //    if (pathCreator != null)
-            //    {
+            if (gameManager.gamePressed)
+            {
+                if (pathCreator != null)
+                {
                     distanceTravelled += speed * Time.deltaTime;
                     transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, endOfPathInstruction);
                     transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled, endOfPathInstruction);
-                //}
-            //}
+                }
+            }
         }
 
         // If the path changes during the game, update the distance travelled so that the follower's position on the new path
