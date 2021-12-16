@@ -89469,7 +89469,7 @@ PrefabInstance:
     - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
         type: 3}
       propertyPath: nbCarton
-      value: 57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8871656462277721949, guid: b13041c1e773474409afe49af59e3b1b,
         type: 3}
