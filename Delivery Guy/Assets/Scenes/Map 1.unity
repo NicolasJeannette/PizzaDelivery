@@ -28933,7 +28933,7 @@ MonoBehaviour:
   m_Priority: 10
   m_StandbyUpdate: 2
   m_LookAt: {fileID: 0}
-  m_Follow: {fileID: 1277723043}
+  m_Follow: {fileID: 1999158290}
   m_Lens:
     FieldOfView: 90
     OrthographicSize: 5
@@ -46887,12 +46887,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6d53ac9a81f80b6449e442c4c8bf8a1b,
     type: 3}
   m_PrefabInstance: {fileID: 1276809270}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1277723043 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2187178096491714400, guid: b13041c1e773474409afe49af59e3b1b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1250452842}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1278572847
 PrefabInstance:
@@ -74599,6 +74593,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 8b8dbe4e5d200294a987091552c38c9d,
     type: 3}
   m_PrefabInstance: {fileID: 1997692088}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1999158290 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2181281502023020096, guid: b13041c1e773474409afe49af59e3b1b,
+    type: 3}
+  m_PrefabInstance: {fileID: 1250452842}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1999158293 stripped
 MonoBehaviour:
