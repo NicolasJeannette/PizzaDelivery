@@ -1,6 +1,4 @@
 using PathCreation.Examples;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DemarrageJeu : MonoBehaviour
@@ -18,12 +16,12 @@ public class DemarrageJeu : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {    
-            if (gamePressed)
-            {
-                texte.SetActive(false);
-                //pathfollower.speed = 14f;
-            }  
+    {
+        if (gamePressed)
+        {
+            texte.SetActive(false);
+            //pathfollower.speed = 14f;
+        }
     }
     public void OnClick()
     {

@@ -10,6 +10,7 @@ public class CollectionCardboard : MonoBehaviour
     public float timeToFly = 2f;
     public float localY = 1f;
     public const float mediantY = 3f;
+    public bool canPickup = true;
 
     private void Start()
     {
@@ -25,7 +26,10 @@ public class CollectionCardboard : MonoBehaviour
             var playerCarboard = other.GetComponent<CompteurCardboard>();
             if (playerCarboard.CanPickupPizzaBox())
             {
-                StartCoroutine(JumpInBagRoutine(playerCarboard));
+                if (canPickup)
+                    StartCoroutine(JumpInBagRoutine(playerCarboard));
+
+                canPickup = false;
             }
         }
     }

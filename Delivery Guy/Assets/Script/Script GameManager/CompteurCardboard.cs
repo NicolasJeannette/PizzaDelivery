@@ -40,11 +40,16 @@ public class CompteurCardboard : MonoBehaviour
     public float variableRotate = 30f;
     public float variableRotateTps = 1f;
 
+    public float offsetScooterY = 0.5f;
+
     private void LateUpdate()
     {
+        if (pizzaBoxAnchor.childCount == 0)
+            return;
+
         var firstBox = pizzaBoxAnchor.GetChild(0);
         firstBox.position = pizzaBoxScooter.position;
-        firstBox.localPosition = new Vector3(firstBox.localPosition.x + x, firstBox.localPosition.y, firstBox.localPosition.z);
+        firstBox.localPosition = new Vector3(firstBox.localPosition.x + x, firstBox.localPosition.y + offsetScooterY, firstBox.localPosition.z);
 
         for (int i = 1; i < pizzaBoxAnchor.childCount; i++)
         {
@@ -87,11 +92,15 @@ public class CompteurCardboard : MonoBehaviour
     {
         for (int i = 0; i < 3; i++) {
             if (nbCarton > 0) {
+
+                if (pizzaBoxAnchor.childCount == 0)
+                    return;
+
                 var pizzaToDestroy = pizzaBoxAnchor.GetChild(pizzaBoxAnchor.childCount - 1);
                 pizzaToDestroy.parent = null;
-
+                
                 nbCarton -= 1;
-
+                Debug.Log(nbCarton.ToString());
                 StartCoroutine(LoosePizza(pizzaToDestroy));
             }
         }
