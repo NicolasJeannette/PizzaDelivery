@@ -40,7 +40,8 @@ public class CollectionCardboard : MonoBehaviour
 
         transform.SetParent(null);
 
-        Vector3 targetTransform = compteurCardboard.pizzaBoxScooter.position + Vector3.up * pizzaBoxNb;
+        Vector3 targetTransform = compteurCardboard.pizzaBoxScooter.position;
+        targetTransform.y += pizzaBoxNb * compteurCardboard.pizzaBoxY;
 
         Vector3 initialTransform = this.transform.position;
 
@@ -58,7 +59,9 @@ public class CollectionCardboard : MonoBehaviour
         while (_t < _targetT)
         {
             float _ratioToEnd = _t / _targetT;
-            targetTransform = compteurCardboard.pizzaBoxScooter.position + Vector3.up * pizzaBoxNb;
+            targetTransform = compteurCardboard.pizzaBoxScooter.position;
+            targetTransform.y += pizzaBoxNb * compteurCardboard.pizzaBoxY;
+
             this.transform.position = BezierCurve.QuadraticCurve(initialTransform, halfPoint, targetTransform, _ratioToEnd);
 
 
