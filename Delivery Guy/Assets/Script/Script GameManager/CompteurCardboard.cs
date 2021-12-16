@@ -100,7 +100,7 @@ public class CompteurCardboard : MonoBehaviour
                 pizzaToDestroy.parent = null;
                 
                 nbCarton -= 1;
-                Debug.Log(nbCarton.ToString());
+                //Debug.Log(nbCarton.ToString());
                 StartCoroutine(LoosePizza(pizzaToDestroy));
             }
         }

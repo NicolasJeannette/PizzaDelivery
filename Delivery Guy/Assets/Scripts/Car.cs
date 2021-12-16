@@ -10,6 +10,7 @@ public class Car : MonoBehaviour
     public float timeBump;
     public float distanceBump;
     public bool estBump;
+    public bool estCollide;
 
     private Vector3 _positionDepart;
     private Vector3 _positionFin;
@@ -30,14 +31,12 @@ public class Car : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-       if(collision.gameObject.tag == "Player")
+       if(collision.gameObject.tag == "Player" && estCollide == false)
         {
+            estCollide = true;
             var cc = collision.gameObject.GetComponent<CompteurCardboard>();
             cc.LooseOnePizza();
 
-            
-
-            speed = 0;
             foreach (PathFollower pf in cc.pathFollowers)
                 StartCoroutine(Recall(pf));
             StartLerping();
@@ -47,6 +46,7 @@ public class Car : MonoBehaviour
 
     private IEnumerator Recall(PathFollower pathFollower)
     {
+        Debug.Log("Recall");
         pathFollower.speed *= -1;
         yield return new WaitForSeconds(0.4f);
         pathFollower.speed *= -1;
