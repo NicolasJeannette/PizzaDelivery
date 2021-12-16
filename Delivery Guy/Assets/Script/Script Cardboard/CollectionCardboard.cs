@@ -45,14 +45,6 @@ public class CollectionCardboard : MonoBehaviour
 
         Vector3 initialTransform = this.transform.position;
 
-
-        Vector3 halfPoint = new Vector3(
-            (targetTransform.x + initialTransform.x) / 2,
-            initialTransform.y + compteurCardboard.mediant + pizzaBoxNb * compteurCardboard.stackCurve.Evaluate(pizzaBoxNb / CompteurCardboard.MAX_BOX),
-            (targetTransform.z + initialTransform.z) / 2
-        );
-
-
         float _t = 0;
         float _targetT = timeToFly;
 
@@ -61,6 +53,12 @@ public class CollectionCardboard : MonoBehaviour
             float _ratioToEnd = _t / _targetT;
             targetTransform = compteurCardboard.pizzaBoxScooter.position;
             targetTransform.y += pizzaBoxNb * compteurCardboard.pizzaBoxY;
+
+            Vector3 halfPoint = new Vector3(
+                (targetTransform.x + initialTransform.x) / 2,
+                initialTransform.y + compteurCardboard.mediant + pizzaBoxNb * compteurCardboard.pizzaBoxY * compteurCardboard.stackCurve.Evaluate(pizzaBoxNb / CompteurCardboard.MAX_BOX),
+                (targetTransform.z + initialTransform.z) / 2
+            );
 
             this.transform.position = BezierCurve.QuadraticCurve(initialTransform, halfPoint, targetTransform, _ratioToEnd);
 
