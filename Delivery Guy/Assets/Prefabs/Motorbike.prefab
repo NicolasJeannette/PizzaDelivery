@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2184286481801008838
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2187212344056376402}
-  - component: {fileID: 2285314918495083770}
-  m_Layer: 0
-  m_Name: SphereRigidBody
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2187212344056376402
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2184286481801008838}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.351, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2181281502023020096}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &2285314918495083770
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2184286481801008838}
-  m_Material: {fileID: 13400000, guid: b63b0dc9f78ff446b863b75d531b3ffa, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2184296677031391154
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,8 +840,8 @@ PositionConstraint:
   m_GameObject: {fileID: 2184855372202975520}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: 59.5, y: -1, z: 0}
-  m_TranslationOffset: {x: 0, y: -2.85, z: 0}
+  m_TranslationAtRest: {x: 75.15, y: -0.9999999, z: -59.95}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 0
   m_AffectTranslationZ: 1
@@ -6357,8 +6313,6 @@ Transform:
   - {fileID: 2181151315510824698}
   - {fileID: 2187139419609196642}
   - {fileID: 2181047445582758414}
-  - {fileID: 8871656462224951797}
-  - {fileID: 2187212344056376402}
   m_Father: {fileID: 2187178096491714400}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
@@ -6786,36 +6740,6 @@ Transform:
   m_Father: {fileID: 2187178096491714400}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8871656462224951796
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8871656462224951797}
-  m_Layer: 0
-  m_Name: Pizza box anchor
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8871656462224951797
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8871656462224951796}
-  m_LocalRotation: {x: -0.07943683, y: -0, z: -0, w: 0.99683994}
-  m_LocalPosition: {x: -0.006000043, y: 0.84700024, z: -0.78699917}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2181281502023020096}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -9.112, y: 0, z: 0}
 --- !u!1001 &411858180232314209
 PrefabInstance:
   m_ObjectHideFlags: 0
