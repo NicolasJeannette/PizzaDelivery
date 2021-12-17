@@ -7,6 +7,7 @@ public class DemarrageJeu : MonoBehaviour
     public bool gamePressed;
     public PathFollower pathfollower;
     public GameObject texte;
+    public GameObject compteur;
     void Start()
     {
         gamePressed = false;
@@ -20,6 +21,7 @@ public class DemarrageJeu : MonoBehaviour
         if (gamePressed)
         {
             texte.SetActive(false);
+            compteur.SetActive(true);
             //pathfollower.speed = 14f;
         }
     }
