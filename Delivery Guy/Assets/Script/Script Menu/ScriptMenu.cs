@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ScriptMenu : MonoBehaviour
 {
+   
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -13,5 +14,10 @@ public class ScriptMenu : MonoBehaviour
     public void OnPlay()
     {
         SceneManager.LoadScene("Map 1");
+    }
+
+    void Start()
+    {
+        
     }
 }

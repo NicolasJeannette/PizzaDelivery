@@ -22,6 +22,7 @@ public class ScriptFinNiveau : MonoBehaviour
         {
             if (compteur.NbCarton >= 1)
             {
+                ScriptNote.nbCarton = compteur.NbCarton;
                 SceneManager.LoadScene("MenuWin");
             }
             else
